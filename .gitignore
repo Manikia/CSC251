@@ -1,0 +1,6 @@
+# ignore all files with the extension .exe or .out ... just incase! :D
+*.exe
+*.out
+
+# ignores all the files inside of pickles ... these are your executables!
+/pickles
