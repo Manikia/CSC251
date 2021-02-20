@@ -5,6 +5,8 @@
 //no global variables
 
 int prompt(void);
+void modArray(int a[], int size);
+void printArray(int a[], int size);
 
 int main(void)
 {
@@ -53,6 +55,9 @@ int main(void)
 
     printf("You had %d 1's, %d 2's, %d 3's \n", arrInt[0], arrInt[1], arrInt[2]);
 
+    modArray(arrInt, 5);
+    printArray(arrInt, 5);
+
     return EXIT_SUCCESS;
 }
 
@@ -63,4 +68,19 @@ int prompt(void)
     scanf(" %d", &x);
 
     return x;
+}
+
+void modArray(int a[], int size)
+{
+    a[0] = 20;
+}
+
+void printArray(int a[], int size)
+{
+    int i;
+
+    for (i = 0; i < size; i++)
+    {
+        printf("array[%d] = %d \n", i, a[i]);
+    }
 }
