@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
+//no global variables
+
 int prompt(void);
 
 int main(void)
@@ -15,9 +17,9 @@ int main(void)
     //srand(20);
     //seed number like where it begins to randomize
 
-    arrInt[0] = 0;
-    arrInt[1] = 0;
-    arrInt[2] = 0;
+    //arrInt[0] = 0;
+    //arrInt[1] = 0;
+    //arrInt[2] = 0;
 
     x = prompt();
 
@@ -25,7 +27,7 @@ int main(void)
     {
 
         y = rand() % 3;
-
+        /*
         if (y == 0)
         {
             arrInt[0]++;
@@ -38,9 +40,10 @@ int main(void)
         else
         {
             arrInt[2]++;
+            //if its any of these dice sides then it increases
         }
-
-        //arrInt[y]++;
+*/
+        arrInt[y]++;
 
         //arrInt[i] = rand() % 10;
         //gives numbers from 0 - 9
@@ -57,7 +60,7 @@ int prompt(void)
 {
     int x;
     printf("How many times would you like to roll the dice?");
-    scanf("%d"), &x;
+    scanf(" %d", &x);
 
     return x;
 }
