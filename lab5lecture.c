@@ -53,7 +53,8 @@ int main(void)
         //        printf("array[%d] = %d \n", i, arrInt[i]);
     }
 
-    printf("You had %d 1's, %d 2's, %d 3's \n", arrInt[0], arrInt[1], arrInt[2]);
+    printf("You had:\n %d 1's,\n %d 2's,\n %d 3's,\n %d 4's,\n %d 5's,\n %d 6's,\n %d7's\n and %d 8's \n",
+           arrInt[0], arrInt[1], arrInt[2], arrInt[3], arrInt[4], arrInt[5], arrInt[6], arrInt[7]);
 
     modArray(arrInt, 5);
     printArray(arrInt, 5);
@@ -74,7 +75,7 @@ void modArray(int a[], int size)
 {
     a[0] = 20;
 }
-
+/*
 void printArray(int a[], int size)
 {
     int i;
@@ -84,3 +85,4 @@ void printArray(int a[], int size)
         printf("array[%d] = %d \n", i, a[i]);
     }
 }
+*/
