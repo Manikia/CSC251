@@ -6,7 +6,7 @@
 
 int prompt(void);
 void modArray(int a[], int size);
-void printArray(int a[], int size);
+//void printArray(int a[], int size);
 
 int main(void)
 {
@@ -28,7 +28,8 @@ int main(void)
     for (i = 0; i < x; i++)
     {
 
-        y = rand() % 3;
+        y = rand() % 4;
+        //increases random numbers in array
         /*
         if (y == 0)
         {
@@ -57,7 +58,7 @@ int main(void)
            arrInt[0], arrInt[1], arrInt[2], arrInt[3], arrInt[4], arrInt[5], arrInt[6], arrInt[7]);
 
     modArray(arrInt, 5);
-    printArray(arrInt, 5);
+    //printArray(arrInt, 5);
 
     return EXIT_SUCCESS;
 }
@@ -70,7 +71,7 @@ int prompt(void)
 
     return x;
 }
-
+//modarray is an example on how to modify an array position
 void modArray(int a[], int size)
 {
     a[0] = 20;
