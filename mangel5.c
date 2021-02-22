@@ -33,7 +33,7 @@ int main(void)
 int prompt(void)
 {
 	int roll;
-	printf("How many times would you like to roll the dice? ");
+	printf("How many times would you like to roll the 8 sided die? ");
 	scanf(" %d", &roll);
 
 	return roll;
