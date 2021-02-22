@@ -50,6 +50,6 @@ void rGen(int roll, int arrInt[])
 
 void output(int roll, int arrInt[])
 {
-    printf("You had:\n%d one's,\n%d two's,\n%d three's,\n%d four's,\n%d five's,\n%d six's,\n%d seven%d eight's \n",
+    printf("You had:\n%d one's,\n%d two's,\n%d three's,\n%d four's,\n%d five's,\n%d six's,\n%d seven's, \n%d eight's \n",
            arrInt[0], arrInt[1], arrInt[2], arrInt[3], arrInt[4], arrInt[5], arrInt[6], arrInt[7]);
 }
