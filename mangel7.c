@@ -1,3 +1,7 @@
+//Monika Angel
+//CSC251
+//3/1/21
+//Lab 70
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
