@@ -12,7 +12,6 @@ int sorter(int array[]);
 
 int main(void)
 {
-    int x, y, i;
     int array[30] = {0};
 
     srand(time(NULL));
