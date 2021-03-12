@@ -3,6 +3,26 @@
 //2/21/21
 //Lab5
 
+// Create a program that does the following:
+
+// Prompt the user to choose from a 4-sided, 6-sided, 8-sided,
+//10-sided, 12-sided, 20-sided, or a 100-sided die.
+// Prompt the user to choose how many times they would like to roll the die.
+// Display each roll.
+// Display the total value of all rolls added together.
+// If the total is Greater than 50%, Display a win message for the user.
+// If the total is less than 51%, display a lose message for the user.
+
+// //sample output
+
+// Choose from a 4-sided, 6-sided, 8-sided, 10-sided, 12-sided,
+//20-sided, or a 100-sided die by entering the number of sides: 10
+// How many times would you like to roll? 5
+// 4, 6, 2, 1, 4
+// 17 out of 50
+
+// I regret to inform you that you have lost the game.
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
