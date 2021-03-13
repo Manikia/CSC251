@@ -1,71 +1,55 @@
 //Monika Angel
 //CSC251
-//3/1/21
-//Lab 70
-// Create a program that does the following:
-
-// Prompt the user to choose from a 4-sided, 6-sided, 8-sided,
-//10-sided, 12-sided, 20-sided, or a 100-sided die.
-// Prompt the user to choose how many times they would like to roll the die.
-// Display each roll.
-// Display the total value of all rolls added together.
-// If the total is Greater than 50%, Display a win message for the user.
-// If the total is less than 51%, display a lose message for the user.
-
-// //sample output
-
-// Choose from a 4-sided, 6-sided, 8-sided, 10-sided, 12-sided,
-//20-sided, or a 100-sided die by entering the number of sides: 10
-// How many times would you like to roll? 5
-// 4, 6, 2, 1, 4
-// 17 out of 50
-
-// I regret to inform you that you have lost the game.
+//3/13/21
+//ec2
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
 int main(void)
 {
-    int roll, i;
-    int die, sides, total = 0;
-    int arrInt[10] = {0};
-    int amount;
-
-    srand(time(NULL));
+    int dieType, roll, i, sides;
 
     printf("Choose from a 4-sided, 6-sided, 8-sided, 10-sided, 12-sided, 20-sided, or a 100-sided die by entering the number of sides: ");
-    scanf(" %d", &die);
+    scanf(" %d", &dieType);
+
     printf("How many times would you like to roll the die? ");
     scanf(" %d", &roll);
 
-    //rolling and recording the sides of dice
+    srand(time(NULL));
+
+    int amount = 0;
+
     for (i = 0; i < roll; i++)
     {
-        sides = rand() % die;
-        //maybe add 1 if it doesnt work
-        arrInt[sides]++;
-    }
-    printf("addition:  %d\n", amount);
-    //IM TRYING TO ADD UP ALL THE SIDES TO MAKE THE NUMBERATOR BUT IT DOESNT WORK
-    switch (die)
-    {
-    case 4:
-    {
-        //out of percentage
-        total = roll * die;
-        arrInt[sides];
-        //I calculated the denomiator for the percentage thing
-        //printf(" %d", total); //this is for proof check
+        sides = rand() % dieType;
 
-        break;
+        amount = amount + sides;
+        printf(" %d", sides);
+
+        //gives comma after every output until theres none
+        if (i < roll - 1)
+        {
+            printf(",");
+        }
     }
-    default:
+    int total = 0;
+    int winsLose = 0;
+
+    total = roll * dieType;
+
+    printf("\n%d out of %d\n", amount, total);
+
+    winsLose = (total / 2.0);
+    if (amount < winsLose + 1)
     {
-        puts("Invalid Entry");
-        break;
+        //since they wanted 51% as a lose
+        printf("You lost the game\n");
     }
-    break;
+    else if (amount > winsLose)
+    {
+        //since they wanted 50% and above a win
+        printf("You won the game\n");
     }
 
     return EXIT_SUCCESS;
