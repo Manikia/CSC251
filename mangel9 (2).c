@@ -1,3 +1,6 @@
+//Monika Angel
+//CSC251
+//3/29/21
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -60,6 +63,7 @@ void uppercaseOutput(char stringInput[])
             //printf("%c", stringInput[i]);
             result[resultIndex++] = stringInput[i];
         }
+
         else if (isspace(stringInput[i]))
         {
             result[resultIndex++] = stringInput[i];
