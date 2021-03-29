@@ -68,7 +68,7 @@ int main(void)
         string[i++] = c;
     }
     printf("You typed %s \n", string);
-    puts(string);
+    //puts(string);
 
     return EXIT_SUCCESS;
 }

@@ -5,11 +5,10 @@
 
 int main(void)
 {
-    char string[20] = "hello world";
-    char string1[] = "hello world";
-    int y, i = 0;
+    char string[20] = {0};
+    int i = 0;
 
-    puts("enter a string no longer than 19 chars");
+    puts("enter a string no longer than 19 chars\n");
     fgets(string, 19, stdin);
 
     //if we want to know if its uppercase we do:
