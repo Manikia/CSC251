@@ -21,10 +21,10 @@ int main(void)
     // fp = fopen(file_name, "r");
 
     int positiveBalance, negativeBalance, zeroBalance;
-    int input;
+    int c, input;
     FILE *fileInput;
+    char stringText;
     fileInput = fopen("input.txt", "r");
-    char fileInput[100], c;
 
     // The program will prompt a user for input. The user will choose from 4 choices:
     printf("Choose from one of the four choices below:");
@@ -37,25 +37,13 @@ int main(void)
     case 1:
     {
         //positiveBalance
-        // // reads text until newline is encountered
-        // fscanf(fileInput, "%[^\n]", c);
-        // printf("Data from the file:\n%s", c);
-        // fclose(fileInput);
-        if (fileInput == NULL)
+        if (fileInput)
         {
-            printf("Cannot open file \n");
-            exit(0);
+            while ((c = getc(fileInput)) != EOF)
+                putchar(c);
+            fclose(fileInput);
         }
-
-        // Read contents from file
-        c = fgetc(fileInput);
-        while (c != EOF)
-        {
-            printf("%c", c);
-            c = fgetc(fileInput);
-        }
-
-        fclose(fileInput);
+        printf("\n");
     }
     case 2:
     {
