@@ -1,62 +1,108 @@
-// Create a program that will read from a file named "input.txt" that follows the same format from class.
-// The program will prompt a user for input. The user will choose from 4 choices:
-// 1. Display all positive balance accounts.
-// 2. Display all negative balance accounts.
-// 3. Display all zero balance accounts.
-// 4. End program.
-// The program will display the contents of the file based on the user input.
-// The program will write the result of all choices made to a file named "output.txt"
-// Submit the program that prompts for user input.
+//Monika Angel
+//4/7/2021
+//CSC251
+//Lab10
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 
 int main(void)
 {
-    // FILE *fp;
+    int account, input;
+    double balance;
+    char name[30];
 
-    // printf("Enter name of a file you wish to see\n");
-    // gets(file_name);
+    FILE *fileInput, *fileOutput;
 
-    // fp = fopen(file_name, "r");
-
-    int positiveBalance, negativeBalance, zeroBalance;
-    int c, input;
-    FILE *fileInput;
-    char stringText;
+    fileOutput = fopen("output.txt", "w");
     fileInput = fopen("input.txt", "r");
 
-    // The program will prompt a user for input. The user will choose from 4 choices:
-    printf("Choose from one of the four choices below:");
-    printf("\nDisplay all positive balance accounts by inputting 1 \nDisplay all negative balance accounts by inputting 2 \nDisplay all zero balance accounts by inputting 3\n");
-    scanf("%d", &input);
+    printf("Choose from one of the four choices below or press -1 to exit:");
 
-    //DONT FORGT TO FORMAT SWITCH
-    switch (input)
+    if(fileOutput == NULL)
     {
-    case 1:
+        puts("ERROR");
+    }
+    else
     {
-        //positiveBalance
-        if (fileInput)
+        while (input != -1)
         {
-            while ((c = getc(fileInput)) != EOF)
-                putchar(c);
-            fclose(fileInput);
+            // The program will prompt a user for input. The user will choose from 4 choices:
+            printf("\nDisplay all positive balance accounts by inputting [1]\nDisplay all negative balance accounts by inputting [2]\nDisplay all zero balance accounts by inputting [3]\n");
+            scanf("%d", &input);
+
+            switch (input)
+            {
+                case 1:
+                {
+                    fprintf(fileOutput, "Output:\n");
+                    //positiveBalance
+                    //opens whole file
+                    // if (fileInput)
+                    // {
+                    //     while ((c = getc(fileInput)) != EOF)
+                    //         putchar(c);
+                    //     fclose(fileInput);
+                    // }
+                    // printf("\n");
+
+                    while (!feof(fileInput))
+                    {
+                        fscanf(fileInput, "%d %s %lf", &account, name, &balance);
+                        if (balance > 0)
+                        {
+                            printf("%d %s %.2lf \n", account, name, balance);
+                            fprintf(fileOutput, "%d %s %.2lf\n", account, name, balance);
+                        }
+                    }
+
+                    rewind(fileInput);
+                    break;
+                }
+                case 2:
+                {
+                    fprintf(fileOutput, "Output:\n");
+                    //negativeBalance
+                    while (!feof(fileInput))
+                    {
+                        fscanf(fileInput, "%d %s %lf", &account, name, &balance);
+                        if (balance < 0)
+                        {
+                            printf("%d %s %.2lf \n", account, name, balance);
+                            fprintf(fileOutput, "%d %s %.2lf\n", account, name, balance);
+                        }
+                    }
+
+                    rewind(fileInput);
+                    break;
+                }
+                case 3:
+                {
+                    fprintf(fileOutput, "Output:\n");
+                    //zero balance
+                    while (!feof(fileInput))
+                    {
+                        fscanf(fileInput, "%d %s %lf", &account, name, &balance);
+                        if (balance == 0)
+                        {
+                            printf("%d %s %.2lf \n", account, name, balance);
+                            fprintf(fileOutput, "%d %s %.2lf\n", account, name, balance);
+                        }
+                    }
+                    rewind(fileInput);
+                    break;
+                }
+                default:
+                {
+                    fclose(fileOutput);
+                    puts("exit");
+                    break;
+                }
+            }
+
+            fprintf(fileOutput, "\n");
         }
-        printf("\n");
-    }
-    case 2:
-    {
-        //negativeBalance
-    }
-    case 3:
-    {
-        //zero balance
-    }
-    default:
-    {
-    }
     }
 
+    fclose(fileInput);
     return EXIT_SUCCESS;
 }

@@ -1,1 +1,74 @@
-1234                        monika 12.500000 
+Output:
+20 jill -25.00
+
+Output:
+50 gus 0.00
+60 gale 0.00
+
+Output:
+10 joe 30.01
+30 jane 1004.58
+40 bill 187.45
+
+Output:
+10 joe 30.01
+30 jane 1004.58
+40 bill 187.45
+
+Output:
+10 joe 30.01
+30 jane 1004.58
+40 bill 187.45
+
+Output:
+10 joe 30.01
+30 jane 1004.58
+40 bill 187.45
+
+Output:
+20 jill -25.00
+
+Output:
+50 gus 0.00
+60 gale 0.00
+
+Output:
+20 jill -25.00
+
+Output:
+10 joe 30.01
+30 jane 1004.58
+40 bill 187.45
+
+Output:
+20 jill -25.00
+
+Output:
+50 gus 0.00
+60 gale 0.00
+
+Output:
+20 jill -25.00
+
+Output:
+20 jill -25.00
+
+Output:
+20 jill -25.00
+
+Output:
+10 joe 30.01
+30 jane 1004.58
+40 bill 187.45
+
+Output:
+20 jill -25.00
+
+Output:
+50 gus 0.00
+60 gale 0.00
+
+Output:
+50 gus 0.00
+60 gale 0.00
+
