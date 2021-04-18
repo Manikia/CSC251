@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
                 puts("1. copy the first file to the second file");
                 puts("5. Exit program");
                 puts("Enter choice");
-                scanf("%d\n", &choice);
+                scanf(" %d", &choice);
 
                 if (choice == 1)
                 {

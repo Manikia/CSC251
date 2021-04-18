@@ -1,3 +1,16 @@
+// Create a program that takes 2 arguments from the terminal. The first argument is an infile (which will be a .txt wordlist) and the second argument is an outfile.
+// Prompt the user with 4 options on how to manipulate the wordlist. After the program completes the outfile should contain the modified wordlist.
+// //sample output
+// ./wlmanipulation infile.txt outfile.txt
+// Choose an option below to modify your wordlist
+// 1. Change the second letter to a capital letter.
+// 2. Make each word lowercase except for the last letter.
+// 3. Make each word uppercase except for the first letter.
+// 4. Duplicate each word 5 times and display the word with it's duplicate # after it. (word1) one word per line.
+// 5. Exit program
+
+// Wordlist complete. Check "outfile.txt" for results.
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -15,7 +28,7 @@ int main(int argc, char *argv[])
 
     if (argc != 3)
     {
-        puts("Program requires 3 arguments..../a.out arg2 arg3\n");
+        puts("Program requires 3 arguments... ./a.out arg2 arg3\n");
     }
     else
     {
@@ -33,7 +46,7 @@ int main(int argc, char *argv[])
                 puts("1. copy the first file to the second file");
                 puts("5. Exit program");
                 puts("Enter choice");
-                scanf("%d\n", &choice);
+                scanf(" %d", &choice);
 
                 if (choice == 1)
                 {
