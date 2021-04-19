@@ -81,8 +81,9 @@ int main(int argc, char *argv[])
                         }
                         letterCounter++;
                     }
-                    fprintf(manipulateToChange, "\n");
                     rewind(wordlist);
+                    fprintf(manipulateToChange, "\n");
+
                     break;
                 }
                 case 2:
@@ -102,17 +103,20 @@ int main(int argc, char *argv[])
                         word[length - 1] = toupper(word[length - 1]);
                         fprintf(manipulateToChange, "%s", word);
                     }
+                    rewind(wordlist);
                     break;
                 }
                 case 3:
                 {
+                    fprintf(manipulateToChange, "\n");
+                    fprintf(manipulateToChange, "\n");
                     int letterCounter = 2;
 
                     while ((c = getc(wordlist)) != EOF)
                     {
                         if (c == '\n')
                         {
-                            letterCounter = 0;
+                            letterCounter = 1;
                         }
                         if (letterCounter == 2)
                         {
