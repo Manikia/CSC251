@@ -29,13 +29,9 @@ int main(int argc, char *argv[])
     FILE *wordlist, *manipulateToChange;
     //two files, wordlist and manipulate that changes wordlist input
 
-    printf("You used %d arguments. \n", argc);
-
-    printf("1st arge = %s \n 2nd arg = %s \n 3rd arg = %s \n", argv[0], argv[1], argv[2]);
-
     if (argc != 3)
     {
-        puts("Program requires 3 arguments..../a.out arg2 arg3\n");
+        puts("Program requires 2 arguments..../a.out arg2 arg3\n");
     }
     else
     {
@@ -88,7 +84,7 @@ int main(int argc, char *argv[])
                 }
                 case 2:
                 {
-                    char word[25];
+                    char string[25];
                     int i = 0;
 
                     while (!feof(wordlist))
@@ -96,12 +92,12 @@ int main(int argc, char *argv[])
                     {
 
                         fprintf(manipulateToChange, "\n");
-                        fscanf(wordlist, "%s", word);
+                        fscanf(wordlist, "%s", string);
 
-                        int length = strlen(word);
+                        int length = strlen(string);
 
-                        word[length - 1] = toupper(word[length - 1]);
-                        fprintf(manipulateToChange, "%s", word);
+                        string[length - 1] = toupper(string[length - 1]);
+                        fprintf(manipulateToChange, "%s", string);
                     }
                     rewind(wordlist);
                     break;
@@ -161,6 +157,8 @@ int main(int argc, char *argv[])
     }
     fclose(manipulateToChange);
     fclose(wordlist);
+
+    printf("Wordlist complete. Check outfile.txt for results.\n");
 
     return EXIT_SUCCESS;
 }
