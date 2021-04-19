@@ -52,8 +52,8 @@ int main(int argc, char *argv[])
                 printf("Choose an option below to modify your wordlist\n");
                 printf("1. Change the second letter to a capital letter.\n"); //done
                 printf("2. Make each word lowercase except for the last letter.\n");
-                printf("3. Make each word uppercase except for the first letter.\n"); //done
-                printf("4. Duplicate each word 5 times and display the word with it's duplicate # after it. (word1) one word per line.\n");
+                printf("3. Make each word uppercase except for the first letter.\n");                                                       //done
+                printf("4. Duplicate each word 5 times and display the word with it's duplicate # after it. (word1) one word per line.\n"); //done
                 printf("5. Exit program.\n");
                 scanf(" %d", &choice);
 
@@ -67,7 +67,6 @@ int main(int argc, char *argv[])
 
                     while ((c = getc(wordlist)) != EOF)
                     {
-
                         if (c == '\n')
                         {
                             letterCounter = 0;
@@ -82,13 +81,15 @@ int main(int argc, char *argv[])
                         }
                         letterCounter++;
                     }
+                    fprintf(manipulateToChange, "\n");
+                    rewind(wordlist);
                     break;
                 }
                 case 2:
                 {
-
                     while ((c = getc(wordlist)) != EOF)
                     {
+                        fprintf(manipulateToChange, "\n");
                         if (islower(c))
                         {
                             printf("%c", c);
@@ -100,6 +101,8 @@ int main(int argc, char *argv[])
 
                         fputc(c, manipulateToChange);
                     }
+                    fprintf(manipulateToChange, "\n");
+                    rewind(wordlist);
                     break;
                 }
                 case 3:
@@ -108,7 +111,6 @@ int main(int argc, char *argv[])
 
                     while ((c = getc(wordlist)) != EOF)
                     {
-
                         if (c == '\n')
                         {
                             letterCounter = 0;
@@ -123,6 +125,9 @@ int main(int argc, char *argv[])
                         }
                         letterCounter++;
                     }
+
+                    fprintf(manipulateToChange, "\n");
+                    rewind(wordlist);
                     break;
                 }
                 case 4:
@@ -134,6 +139,8 @@ int main(int argc, char *argv[])
                     while (!feof(wordlist))
                     //while ((c = getc(wordlist)) != EOF)
                     {
+
+                        fprintf(manipulateToChange, "\n");
                         fscanf(wordlist, "%s", word);
                         // if (c == '\n')
                         // {
@@ -144,6 +151,8 @@ int main(int argc, char *argv[])
                             fprintf(manipulateToChange, "%s%d\n", word, i);
                         }
                     }
+
+                    rewind(wordlist);
                     break;
                 }
                 }
