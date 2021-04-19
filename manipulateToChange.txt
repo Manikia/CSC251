@@ -2,10 +2,11 @@ wHy
 hEllo
 tHere
 bObby
-wHY
-HeLLO
-ThERE
-BoBBY
+
+whY
+hellO
+therE
+bobbY
 
 why1
 why2

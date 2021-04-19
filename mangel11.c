@@ -87,22 +87,21 @@ int main(int argc, char *argv[])
                 }
                 case 2:
                 {
-                    while ((c = getc(wordlist)) != EOF)
-                    {
-                        fprintf(manipulateToChange, "\n");
-                        if (islower(c))
-                        {
-                            printf("%c", c);
-                        }
-                        else
-                        {
-                            tolower(c);
-                        }
+                    char word[25];
+                    int i = 0;
 
-                        fputc(c, manipulateToChange);
+                    while (!feof(wordlist))
+                    // //while ((c = getc(wordlist)) != EOF)
+                    {
+
+                        fprintf(manipulateToChange, "\n");
+                        fscanf(wordlist, "%s", word);
+
+                        int length = strlen(word);
+
+                        word[length - 1] = toupper(word[length - 1]);
+                        fprintf(manipulateToChange, "%s", word);
                     }
-                    fprintf(manipulateToChange, "\n");
-                    rewind(wordlist);
                     break;
                 }
                 case 3:
@@ -142,10 +141,7 @@ int main(int argc, char *argv[])
 
                         fprintf(manipulateToChange, "\n");
                         fscanf(wordlist, "%s", word);
-                        // if (c == '\n')
-                        // {
-                        //     letterCounter = 0;
-                        // }
+
                         for (i = 1; i <= 5; i++)
                         {
                             fprintf(manipulateToChange, "%s%d\n", word, i);
